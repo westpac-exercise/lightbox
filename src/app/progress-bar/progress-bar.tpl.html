@@ -1,0 +1,8 @@
+<div class="progress-bar">
+			<div class="progress" style="width: {{ progress.fractionedValue }}%" ng-class="{'progress-complete':progress.value === finish}"></div>
+</div>
+<div class="progress-text">
+			<span ng-if="progress.value < finish">Progress {{ progressBar.progressText + ' ' + progress.value + '%' }}</span>
+			<span  ng-if="progress.value === finish" class="tick">This task is {{ progress.value}}% complete <i></i></span> 
+</div>
+

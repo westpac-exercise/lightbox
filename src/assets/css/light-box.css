@@ -1,0 +1,174 @@
+
+* {
+    box-sizing: border-box;
+}
+.btns {
+
+}
+.btns button {
+  margin: 0 auto;
+  background-color: #555555;;
+  display: block;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}
+
+.lightbox .backdrop {
+  background-color: black;
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index:100;
+  -moz-opacity: 0.8;
+  opacity:.80;
+  filter: alpha(opacity=80);
+  }
+
+.lightbox .lightbox-control {
+
+  background-color: #ffffff;
+  color: #808080;
+  position: absolute;
+  z-index: 110;
+}
+
+.lightbox .lightbox-control .title {
+  background-color: #808080;
+  color: #dddddd;
+ }
+
+.lightbox .lightbox-control .close {
+  background: url("../images/close.ico.png") 0 0 no-repeat;
+  cursor: pointer;
+  float: right;
+}
+.progress-bar {
+  border: 1px solid #dddddd;
+}
+
+ .progress-bar .progress {
+  background: -moz-linear-gradient(top, #7fc9ff 0%, #507fa1 100%);
+  background: -ms-linear-gradient(top, #7fc9ff 0%, #507fa1 100%);
+  background: -o-linear-gradient(top, #7fc9ff 0%, #507fa1 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #7fc9ff), color-stop(100%, #507fa1));
+  background: -webkit-linear-gradient(top, #7fc9ff 0%, #507fa1 100%);
+  background: #7fc9ff;
+  background: linear-gradient(to bottom, #7fc9ff 0%, #507fa1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7fc9ff', endColorstr='#507fa1', GradientType=0);
+  height: 100%;
+  width: 0%;
+}
+ .progress-bar .progress-complete {
+  background: -moz-linear-gradient(top, #7bc300 0%, #4d7a00 100%);
+  background: -ms-linear-gradient(top, #7bc300 0%, #4d7a00 100%);
+  background: -o-linear-gradient(top, #7bc300 0%, #4d7a00 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #7bc300), color-stop(100%, #4d7a00));
+  background: -webkit-linear-gradient(top, #7bc300 0%, #4d7a00 100%);
+  background: #7bc300;
+  background: linear-gradient(to bottom, #7bc300 0%, #4d7a00 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7bc300', endColorstr='#4d7a00', GradientType=0);
+}
+ .progress-text {
+  position: relative;
+  text-align: center;
+}
+ .progress-text .tick i {
+  background: url("../images/tick.ico.png") 0 0 no-repeat;
+  }
+
+
+@media (max-width: 600px) {
+ 
+ 
+.lightbox .lightbox-control {
+  font-family: "Ronaldo";
+  font-size: 1.0em;
+  height: 23%;
+  top: 45%;
+  left: 16%;
+  width: 260px;
+  height: 110px;
+  max-width: 80%;
+}
+
+.lightbox .lightbox-control .title {
+   padding: 8px;
+}
+.lightbox .lightbox-control .close {
+  background-size: 20px 20px;
+  height: 20px;
+  width: 20px;
+  margin-top: -0px;
+}
+ .progress-bar {
+  height: 15%;
+  margin: 10px auto;
+  width: 80%;
+}
+ .progress-text .tick i {
+    background-size: 17px 17px;
+  height: 17px;
+  width: 17px;
+  margin-left: 3px;
+  position: absolute;
+  top: 0px;
+  
+}
+@media (min-width: 360px) {
+  body {
+    font-size: 1.0em;
+  }
+}
+
+}
+
+@media (min-width: 601px) {
+
+  .lightbox .lightbox-control {
+ font-family: Arial, sans-serif;
+  font-size: 16px;
+  height: 23%;
+  top: 50%;
+  left: 50%;
+  width: 270px;
+  height: 110px;
+  max-width: 80%;
+}
+
+.lightbox .lightbox-control .title {
+   padding: 10px;
+}
+.lightbox .lightbox-control .close {
+  background-size: 25px 25px;
+  height: 25px;
+  width: 25px;
+  margin-top: -3px;
+}
+ .progress-bar {
+  height: 15%;
+  margin: 10px auto;
+  width: 80%;
+}
+ .progress-text .tick i {
+    background-size: 20px 20px;
+  height: 20px;
+  width: 20px;
+  margin-left: 3px;
+  position: absolute;
+  top: -2px;
+  
+}
+
+}
+
