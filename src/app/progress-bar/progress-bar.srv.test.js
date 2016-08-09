@@ -30,9 +30,9 @@ service = "progressService";
 	        //act 
 	        service.start(mockconfig)
 	        .then(null,null,testProgres)
-	     //   .catch(function(err){
-	     //   	done(new Error('Promise fail: ' + err));
-	     //   });
+	        .catch(function(err){
+	        	done(new Error('Promise fail: ' + err));
+	        });
 	    done();
   	    }));
    	 
