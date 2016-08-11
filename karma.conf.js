@@ -21,6 +21,12 @@ module.exports = function(config) {
       'src/app/**/*.html'
     ],
 
+    plugins: [ 
+  'karma-chrome-launcher', 
+  'karma-jasmine', 
+  'karma-ng-html2js-preprocessor' 
+   ], 
+
 
     // list of files to exclude
     exclude: [
@@ -35,7 +41,12 @@ module.exports = function(config) {
 
             // setting this option will create only a single module that contains templates
             // from all the files, so you can load them all with module('foo')
-            moduleName: 'lb-pb-app-tpl'
+            cacheIdFromPath: function(filePath){
+                filePath = filePath.substring('src/'.length);
+                return filePath;
+            },
+            stripprefix:'src/',
+            moduleName: 'lb-pb-app'
         },
 
         // list of files to exclude
