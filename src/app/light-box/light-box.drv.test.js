@@ -21,7 +21,7 @@ describe('Unit testing Light box', function() {
 
   it('Replaces the element with the appropriate content', function() {
 
-   $httpBackend.whenGET('app/light-box/light-box.tpl.html').respond(200, '');
+   //$httpBackend.whenGET('app/light-box/light-box.tpl.html').passThrough();
     // Compile a piece of HTML containing the directive
     var element = $compile('<light-box class="lightbox"></light-box>')($rootScope);
     // fire all the watches, so the scope expression will be evaluated
