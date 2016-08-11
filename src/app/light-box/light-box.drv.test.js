@@ -1,33 +1,47 @@
-describe('Unit testing Light box', function() {
-  var $compile,
-      $rootScope;
+describe('progressService test', function(){
+    describe('when I call progressService', function(){
+		
+		var service, $interval,http;
+		var mockconfig = { start: 1, finish:100, duration : 100 };
+		
+		// Arrange
+        beforeEach(module('lb-pb-app'));
+        beforeEach(inject(function(_$interval_, _progressService_) {
+    	service = _progressService_;
+    	$interval = _$interval_;
+    	}));
 
-  // Load the lb-pb-app module, which contains the directive
-  beforeEach(module('lb-pb-app'));
+		//Assert         
+       // expect(service).not.toEqual(null);
+	
+        it('should fetch progress percentage on every heartbeat interval', function() {
 
-  var $httpBackend;
-  beforeEach(inject(function($injector) {
- 
-}));
+	    	var testProgress  = function(progress) {
 
-  // Store references to $rootScope and $compile
-  // so they are available to all tests in this describe block
-  beforeEach(inject(function(_$compile_, _$rootScope_,$injector){
-    // The injector unwraps the underscores (_) from around the parameter names when matching
-    $compile = _$compile_;
-    $rootScope = _$rootScope_;
-    $httpBackend = $injector.get('$httpBackend');
-  }));
+	    	var progressValue =progress.value;	
+	
+	    	expect(progressValue >= mockconfig.start).toBeTruthy();
+          	expect(progressValue <= mockconfig.finish).toBeTruthy();
 
-  it('Replaces the element with the appropriate content', function() {
+          	$interval.flush(4000);	
 
-   //$httpBackend.whenGET('app/light-box/light-box.tpl.html').passThrough();
-    // Compile a piece of HTML containing the directive
-    var element = $compile('<light-box class="lightbox"></light-box>')($rootScope);
-    // fire all the watches, so the scope expression will be evaluated
-    $rootScope.$digest();
-    console.log("test" + element.html());
-    // Check that the compiled element contains the templated content
-    expect(element.html()).toContain("Progress");
-  });
+            };
+
+	    	var failTest = function(error) {
+     		 expect(error).toBeUndefined();
+   			 };
+
+	        //act 
+	        service.start(mockconfig)
+	        .then(null,null,testProgress)
+	        .catch(function(err){
+	        	done(new Error('Promise fail: ' + err));
+	        });
+	     $interval.flush();        
+
+	    });
+
+    });    
+
 });
+
